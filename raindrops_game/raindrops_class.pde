@@ -1,8 +1,7 @@
 class Raindrop {
   PVector s, v, a;
-  float j, k, m, n, r, scr;
-  float gr=.25;
-  color c, o;
+  float r;
+  color c;
   Raindrop() {
     r=5;
     s= new PVector(random(r, width-r), random(r, height-r));
@@ -22,6 +21,11 @@ class Raindrop {
       v= new PVector(random(-1, 1), random(0, 3));
       s= new PVector(random(r,width-r),-r);
     }
+  }
+  void checkCatcher(Catcher z){
+   if(s.dist(z.s)<r+z.r){
+    v.mult(-1);
+   } 
   }
 }
 

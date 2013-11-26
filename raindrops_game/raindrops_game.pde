@@ -3,7 +3,7 @@ Catcher c;
 void setup() {
   size(800, 800);
   noStroke();
-  c=new Catcher(width/2,height-50);
+  c=new Catcher();
   raindrop=new Raindrop[100];
   for (int i=0;i<raindrop.length;i++) {
     raindrop[i]=new Raindrop();

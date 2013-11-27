@@ -6,7 +6,7 @@ class Raindrop {
     r=5;
     s= new PVector(random(r, width-r), random(r, height-r));
     v= new PVector(random(-1, 1), random(0, 3));
-    a= new PVector(0, .05);
+    a= new PVector(0, .01);
   }
   void display() {
     colorMode(HSB, 360, 100, 100);
@@ -19,13 +19,23 @@ class Raindrop {
     v.add(a);
     if (s.y>height-r) {
       v= new PVector(random(-1, 1), random(0, 3));
-      s= new PVector(random(r,width-r),-r);
+      s= new PVector(random(r, width-r), -r);
+      q++;
+      println(q);
     }
   }
-  void checkCatcher(Catcher z){
-   if(s.dist(z.s)<r+z.r){
-    v.mult(-1);
-   } 
+  void checkCatcher(Catcher z) {
+    if (s.dist(z.s)<r+z.r) {
+      v= new PVector(random(-1, 1), random(0, 3));
+      s= new PVector(random(r, width-r), -r);
+      p++;
+    }
+  }
+  void stopGame() {   
+    if (q>100) {
+      background(255);
+      text("YOU LOSE. TRY AGAIN", width/2, height/2);
+    }
   }
 }
 

@@ -7,16 +7,15 @@ void setup() {
   c=0;
   r=50;
   s=new PVector(width/2, height/2);
-
   ot=0;
 }
 void draw() {
   t=millis();
   println(millis());
-  background(nc);
-  if (t-ot>2000) {
+  background(c);
+  if (t-ot>1000) {
     c=color(random(255), random(255), random(255));
-    s=new PVector(random(nr, width-nr), random(nr, height-nr));
+    s=new PVector(random(r, width-r), random(r, height-r));
     ot=t;
   }
   fill(0, 255, 255);

@@ -23,6 +23,12 @@ class Raindrop {
       q++;
       println(q);
     }
+    if (s.x>width+r) {
+      s.x=0;
+    }
+    if (s.x<-r) {
+      s.x=height;
+    }
   }
   void checkCatcher(Catcher z) {
     if (s.dist(z.s)<r+z.r) {

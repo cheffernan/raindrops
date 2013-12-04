@@ -5,10 +5,9 @@ void setup() {
   size(800, 800);
   noStroke();
   textAlign(CENTER);
-  textSize(50);
   colorMode(HSB,360,100,100);
   c=new Catcher(180);
-  raindrop=new Raindrop[100];
+  raindrop=new Raindrop[10];
   p=0;
   q=0;
   for (int i=0;i<raindrop.length;i++) {
@@ -25,6 +24,9 @@ void draw() {
     raindrop[i].checkCatcher(c);
     
   }
+  textSize(50);
   text(p,width/2,50);
+  textSize(20);
+  text(q,width-20,20);
 }
 

@@ -21,7 +21,7 @@ class Timer {
     if (time-ot>3000) {
       ot=time;
       //another raindrop is added only if the index is less than the length of the array of raindrops (which is the maximum number of raindrops)
-      if (u<raindrop.length) {
+      if (n<raindrop.length) {
         n++;
       }
     }

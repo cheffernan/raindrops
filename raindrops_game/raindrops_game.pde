@@ -5,9 +5,9 @@ Timer t;
 /* p is the number of raindrops you have caught
  q is the number of raindrops you have missed
  n is the index that determines how many raindrops will be on the screen
- k is how many raindrops can reach the bottom of the screen until the game stops
+ lim is how many raindrops can reach the bottom of the screen until the game stops
  */
-int p, q, n,k;
+int p, q, n,lim;
 void setup() {
   //sets up colormode, size, text, and stroke for game
   size(800, 800);
@@ -21,7 +21,7 @@ void setup() {
   p=0;
   q=0;
   n=1;
-  k=5;
+  lim=5;
   for (int i=0;i<raindrop.length;i++) {
     raindrop[i]=new Raindrop();
   }

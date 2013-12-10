@@ -46,18 +46,19 @@ class Raindrop {
   void checkCatcher(Catcher z) {
     /*if the sum of their radii is greater than the distance between the center of the raindrop and catcher, then the velocity is reset and the position is reset to the top of the screen
      the velocity is reset because there is acceleration, and that would make the raindrops go too fast over time if not reset
-     the number of raindrops caught increases 
+     the number of raindrops caught increases. Also, the position is reset to just above the top of the screen
      */
     if (s.dist(z.s)<r+z.r) {
       v= new PVector(random(-1, 1), random(0, 3));
       s= new PVector(random(r, width-r), -r);
+      // the score increases when the raindrop touches the catcher
       p++;
     }
   }
   //stops the game if over 100 raindrops are missed
   void stopGame() {   
-    //creates a white background with a message if q (the number of raindrops missed) reaches k (the limit of raindrops that can be missed)
-    if (q>=k) {
+    //creates a white background with a message if q (the number of raindrops missed) reaches lim (the limit of raindrops that can be missed)
+    if (q>=lim) {
       background(255);
       text("YOU LOSE. TRY AGAIN", width/2, height/2);
     }

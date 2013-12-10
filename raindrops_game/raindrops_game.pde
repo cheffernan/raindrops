@@ -21,7 +21,7 @@ void setup() {
   p=0;
   q=0;
   n=1;
-  lim=5;
+  lim=100;
   for (int i=0;i<raindrop.length;i++) {
     raindrop[i]=new Raindrop();
   }
@@ -43,7 +43,7 @@ void draw() {
    */
   for (int i=0;i<n;i++) {
     raindrop[i].display();
-    if (q<k) {
+    if (q<lim) {
       raindrop[i].move();
     }
     raindrop[i].stopGame();

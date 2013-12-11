@@ -8,12 +8,12 @@ Timer t;
  n is the index that determines how many raindrops will be on the screen
  lim is how many raindrops can reach the bottom of the screen until the game stops
  */
-int p, q, n, lim;
+int p, q, n, lim, l, w;
 void setup() {
   //sets up colormode, size, text, and stroke for game
   size(800, 800);
   noStroke();
-  textAlign(CENTER);
+  textAlign(CENTER, CENTER);
   rectMode(CENTER);
   colorMode(HSB, 360, 100, 100);
   //initializes all parameters, integers, classes, and array
@@ -23,8 +23,10 @@ void setup() {
   p=0;
   q=0;
   n=1;
-  lim=100;
+  lim=1;
   run=false;
+  l=300;
+  w=100;
   for (int i=0;i<raindrop.length;i++) {
     raindrop[i]=new Raindrop();
   }
@@ -34,7 +36,7 @@ void draw() {
    starts the timer and increases the number of drops according to the time
    */
   background(0);
- 
+  if (run) {
     c.display();
     c.move();
     t.run();
@@ -60,8 +62,18 @@ void draw() {
     fill(0, 50, 80);
     textSize(20);
     text(q, width-20, 20);
-
-
-  
+  }
+else {
+  fill(120, 100, 100);
+  rect(width/2, height/2, l, w);
+  fill(0, 0, 100);
+  textSize(75);
+  text("START", width/2, height/2);
+}
+}
+void mousePressed() {
+  if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height+w)/2&&mouseY>(height-w)/2) {
+    run=!run;
+  }
 }
 

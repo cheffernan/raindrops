@@ -59,7 +59,9 @@ class Raindrop {
   void stopGame() {   
     //creates a white background with a message if q (the number of raindrops missed) reaches lim (the limit of raindrops that can be missed)
     if (q>=lim) {
-      background(255);
+      background(0);
+      textSize(75);
+      fill(random(360),100,100);
       text("YOU LOSE. TRY AGAIN", width/2, height/2);
     }
   }

@@ -63,17 +63,21 @@ void draw() {
     textSize(20);
     text(q, width-20, 20);
   }
-else {
-  fill(120, 100, 100);
-  rect(width/2, height/2, l, w);
-  fill(0, 0, 100);
-  textSize(75);
-  text("START", width/2, height/2);
-}
+  else {
+    fill(120, 100, 100);
+    rect(width/2, height/2, l, w);
+    fill(0, 0, 100);
+    textSize(75);
+    text("START", width/2, height/2);
+  }
 }
 void mousePressed() {
   if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height+w)/2&&mouseY>(height-w)/2) {
-    run=!run;
+    run=true;
   }
+//  if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height/2)-(100+((.75*w)/2))&&mouseY>(height/2)-(100-((.75*w)/2))) {
+//    run=false;
+//    println(mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height/2)-(100+((.75*w)/2))&&mouseY>(height/2)-(100-((.75*w)/2)));
+//  }
 }
 

@@ -63,6 +63,11 @@ class Raindrop {
       textSize(75);
       fill(random(360),100,100);
       text("YOU LOSE. TRY AGAIN", width/2, height/2);
+      fill(0,50,80);
+      rect(width/2,height-100,l,.75*w);
+      textSize(50);
+      fill(0);
+      text("TRY AGAIN", width/2, height-100);
     }
   }
 }

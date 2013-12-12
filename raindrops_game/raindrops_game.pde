@@ -3,12 +3,14 @@ boolean run;
 Raindrop[] raindrop;
 Catcher c;
 Timer t;
+Start st;
 /* p is the number of raindrops you have caught
  q is the number of raindrops you have missed
  n is the index that determines how many raindrops will be on the screen
  lim is how many raindrops can reach the bottom of the screen until the game stops
+ l and w correspond to the length and width of the the start and try again rectangle, which is why they are not in the start class
  */
-int p, q, n, lim, l, w;
+int p, q, n, lim,l,w;
 void setup() {
   //sets up colormode, size, text, and stroke for game
   size(800, 800);
@@ -20,6 +22,7 @@ void setup() {
   c=new Catcher();
   raindrop=new Raindrop[10];
   t=new Timer();
+  st=new Start();
   p=0;
   q=0;
   n=1;
@@ -64,17 +67,11 @@ void draw() {
     text(q, width-20, 20);
   }
   else {
-    fill(120, 100, 100);
-    rect(width/2, height/2, l, w);
-    fill(0, 0, 100);
-    textSize(75);
-    text("START", width/2, height/2);
+    st.display();
   }
 }
 void mousePressed() {
-  if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height+w)/2&&mouseY>(height-w)/2) {
-    run=true;
-  }
+  st.changeRun();
   if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY>height-100-((.75*w)/2)&&mouseY<height-100+((.75*w)/2)) {
     run=false;
   }

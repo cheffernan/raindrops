@@ -15,7 +15,7 @@ class Catcher {
   //shows the catcher, ellipse with a fill of predetermined color and radius
   void display() {
     colorMode(HSB, 360, 100, 100);
-    c= color(360*q/lim, 50, 80);
+    c= color(360*q/lim, 80, 100);
     fill(c);
     ellipse(s.x, s.y, 2*r, 2*r);
   }

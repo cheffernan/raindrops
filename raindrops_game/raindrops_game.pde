@@ -75,9 +75,8 @@ void mousePressed() {
   if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height+w)/2&&mouseY>(height-w)/2) {
     run=true;
   }
-//  if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height/2)-(100+((.75*w)/2))&&mouseY>(height/2)-(100-((.75*w)/2))) {
-//    run=false;
-//    println(mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY<(height/2)-(100+((.75*w)/2))&&mouseY>(height/2)-(100-((.75*w)/2)));
-//  }
+  if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY>height-100-((.75*w)/2)&&mouseY<height-100+((.75*w)/2)) {
+    run=false;
+  }
 }
 

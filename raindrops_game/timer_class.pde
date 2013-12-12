@@ -11,7 +11,7 @@ class Timer {
   //sets time equal to the number of milliseconds that the game has been running and prints this time
   void run() {
     time=millis();
-    println(millis());
+//    println(millis());
   }
   //adds a raindrop every 3 seconds
   void addDrops() {

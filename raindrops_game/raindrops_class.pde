@@ -14,7 +14,7 @@ class Raindrop {
      */
     r=5;
     s= new PVector(random(r, width-r), 0);
-    v= new PVector(random(-.5, .5), random(0, 2));
+    v= new PVector(random(-.5, .5), random(0, 3));
     a= new PVector(0, .01);
   }
   //displays a drop according to the parameters defined above

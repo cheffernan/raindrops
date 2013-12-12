@@ -26,7 +26,7 @@ void setup() {
   p=0;
   q=0;
   n=1;
-  lim=100;
+  lim=50;
   run=false;
   l=300;
   w=100;
@@ -74,6 +74,8 @@ void mousePressed() {
   st.changeRun();
   if (mouseX<(width+l)/2&&mouseX>(width-l)/2&&mouseY>height-100-((.75*w)/2)&&mouseY<height-100+((.75*w)/2)) {
     run=false;
+    q=0;
+    p=0;
   }
 }
 

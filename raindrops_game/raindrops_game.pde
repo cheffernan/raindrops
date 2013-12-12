@@ -17,13 +17,13 @@ void setup() {
   rectMode(CENTER);
   colorMode(HSB, 360, 100, 100);
   //initializes all parameters, integers, classes, and array
-  c=new Catcher(180);
+  c=new Catcher();
   raindrop=new Raindrop[10];
   t=new Timer();
   p=0;
   q=0;
   n=1;
-  lim=1;
+  lim=100;
   run=false;
   l=300;
   w=100;

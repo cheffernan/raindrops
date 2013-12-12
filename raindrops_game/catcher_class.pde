@@ -8,15 +8,14 @@ class Catcher {
   initializes the radius and position of the catcher
   */
   //creates a contructor with one float parameter that will equal the hue of the fill
-  Catcher(float o) {
+  Catcher() {
     r=50;
-    h=o;
     s= new PVector(mouseX, height-r);
   }
   //shows the catcher, ellipse with a fill of predetermined color and radius
   void display() {
     colorMode(HSB, 360, 100, 100);
-    c= color(h, 50, 80);
+    c= color(360*q/lim, 50, 80);
     fill(c);
     ellipse(s.x, s.y, 2*r, 2*r);
   }

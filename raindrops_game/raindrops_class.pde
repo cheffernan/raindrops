@@ -1,28 +1,30 @@
 //this class will have a raindrop that falls down the screen, reappears at the top if the raindrop touches the catcher, and stops the game if too many raindrps are missed
 class Raindrop {
   /* creates the position (s), velocity (v), and acceleration (a) vectors for the raindrop
-   creates a radius and color for each raindrop
+   creates a radius, height(distance from the center of the raindrop), and color for each raindrop
    */
   PVector s, v, a;
-  float r;
+  float r,h;
   color c;
   //creates a constructor with no parameters
   Raindrop() {
-    /* gives a radius to the drop, and an acceleration
+    /* gives a radius and height to the drop, and an acceleration
      allows the position to have a random x-component
      velocity has random x and y components
      */
     r=5;
+    h=10;
     s= new PVector(random(r, width-r), 0);
     v= new PVector(random(-.5, .5), random(0, 3));
     a= new PVector(0, .01);
   }
-  //displays a drop according to the parameters defined above
+  //displays a drop (circle and triangle) according to the parameters defined above
   void display() {
     colorMode(HSB, 360, 100, 100);
-    c= color(180, 0, 80);
+    c= color(240, 50, 80);
     fill(c);
     ellipse(s.x, s.y, 2*r, 2*r);
+    triangle(s.x,s.y-h,s.x-r,s.y,s.x+r,s.y);
   }
   //makes the raindrop move with velocity and acceleration
   void move() {

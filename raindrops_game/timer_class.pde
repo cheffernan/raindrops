@@ -17,7 +17,7 @@ class Timer {
   }
   //adds a raindrop every 2 seconds
   void addDrops() {
-    /* if the difference between the time and the time since the last raindrop was dropped is greater than 2, the number of raindrops increases
+    /* if the difference between the time and the time since the last raindrop was dropped is greater than 2 seconds, the number of raindrops increases
      old time is set to equal time because this way the difference between the two will equal zero and will against increase until 2 seconds
      */
     if (time-ot>2000) {
@@ -27,6 +27,9 @@ class Timer {
         n++;
       }
     }
+    /* if the difference between the time and the time since the last star was dropped is greater than 10 seconds, a new star is dropped
+     old star time is set to equal time because this way the difference between the two will equal zero and will against increase until 10 seconds
+     */
     if (time-ost>10000) {
       ost=time;
       //another star is added only if the index is less than the length of the array of raindrops (which is the maximum number of raindrops)

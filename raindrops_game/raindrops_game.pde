@@ -5,12 +5,14 @@ Catcher catching;
 Timer t;
 Start st;
 PImage game;
+Star[] star;
 /* p is the number of raindrops you have caught
  q is the number of raindrops you have missed
  n is the index that determines how many raindrops will be on the screen
+ ntwo is the index that determines how many stars will fall
  lim is how many raindrops can reach the bottom of the screen until the game stops
  */
-int p, q, n, lim;
+int p, q, n, ntwo, lim;
 void setup() {
   //sets up colormode, size, text, and stroke for game
   size(800, 800);
@@ -21,17 +23,22 @@ void setup() {
   imageMode(CORNER);
   //initializes all parameters, integers, classes, array, and image
   catching=new Catcher();
-  raindrop=new Raindrop[10];
+  raindrop=new Raindrop[100];
   t=new Timer();
   st=new Start();
   game=loadImage("game scene.jpg");
+  star=new Star[10];
   p=0;
   q=0;
   n=1;
+  ntwo=0;
   lim=50;
   run=false;
   for (int i=0;i<raindrop.length;i++) {
     raindrop[i]=new Raindrop();
+  }
+  for (int i=0;i<star.length;i++) {
+    star[i]=new Star();
   }
 }
 void draw() {
@@ -41,6 +48,7 @@ void draw() {
      displays the catcher and allows it to move
      starts the timer and increases the number of drops according to the time
      */
+    imageMode(CORNER);
     image(game, 0, 0, width, height);
     catching.display();
     catching.move();
@@ -60,6 +68,13 @@ void draw() {
       }
       raindrop[i].stopGame();
       raindrop[i].checkCatcher(catching);
+    }
+    for (int i=0;i<ntwo;i++) {
+      star[i].display();
+      if (q<lim) {
+        star[i].move();
+      }
+      star[i].checkCatcher(catching);
     }
     //displays the two scores, the number of raindrops caught in the middle of the screen in green, and the number of drops missed on the side of the screen in red
     fill(120, 100, 100);

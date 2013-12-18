@@ -52,8 +52,7 @@ class Raindrop {
   void checkCatcher(Catcher z) {
     /*if the sum of their radii is greater than the distance between the center of the raindrop and catcher, then the velocity is reset and the position is reset to the top of the screen
      the velocity is reset because there is acceleration, and that would make the raindrops go too fast over time if not reset
-     the number of raindrops caught increases. Also, the position is reset to just above the top of the screen
-     the score increases
+     the number of raindrops caught increases
      */
     if (s.dist(z.s)<r+z.r) {
       v= new PVector(random(-1, 1), random(0, 3));
@@ -69,6 +68,7 @@ class Raindrop {
   void stopGame() {   
     //creates a thunderstorm background image with a message if q (the number of raindrops missed) reaches lim (the limit of raindrops that can be missed)
     if (q>=lim) {
+      imageMode(CORNER);
       image(end, 0, 0, width, height);
       textSize(75);
       fill(random(360), 100, 100);

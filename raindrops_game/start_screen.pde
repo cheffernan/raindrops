@@ -14,6 +14,7 @@ class Start {
   }
   //displays the image and the start button, a rectangle with the word start in it
   void display() {
+    imageMode(CORNER);
     image(first, 0, 0, width, height);
     fill(120, 100, 100);
     rect(s.x, s.y, l, w);

@@ -2,11 +2,13 @@
 class Timer {
   /* time is the current time
    ot is the old time: the time at which the last raindrop was dropped
+   ost is the time at which the last star was dropped
    */
-  int time, ot;
+  int time, ot, ost;
   //creates a constructor with no parameters
   Timer() {
     ot=0;
+    ost=0;
   }
   //sets time equal to the number of milliseconds that the game has been running and prints this time
   void run() {
@@ -23,6 +25,13 @@ class Timer {
       //another raindrop is added only if the index is less than the length of the array of raindrops (which is the maximum number of raindrops)
       if (n<raindrop.length) {
         n++;
+      }
+    }
+    if (time-ost>10000) {
+      ost=time;
+      //another star is added only if the index is less than the length of the array of raindrops (which is the maximum number of raindrops)
+      if (ntwo<star.length) {
+        ntwo++;
       }
     }
   }

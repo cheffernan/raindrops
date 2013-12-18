@@ -1,17 +1,20 @@
 //creates a class for the start screen
 class Start {
-  // creates a position for the start button and a length and width for the rectangle
+  // creates a position for the start button, an image for the background, and a length and width for the rectangle
   PVector s;
+  PImage first;
   float l, w;
   //creates a constructor with no parameters
   Start() {
     //initializes all variables
     s=new PVector(width/2, height/2);
+    first=loadImage("start scene.JPG");
     l=300;
     w=100;
   }
-  //displays the start button, a rectangle with the word start in it
+  //displays the image and the start button, a rectangle with the word start in it
   void display() {
+    image(first, 0, 0, width, height);
     fill(120, 100, 100);
     rect(s.x, s.y, l, w);
     fill(0, 0, 100);

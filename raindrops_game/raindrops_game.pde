@@ -1,9 +1,10 @@
-//creates boolean to run the game, raindrops, catcher, timer, and start screen
+//creates boolean to run the game, raindrops, catcher, timer, start screen, and picture
 boolean run;
 Raindrop[] raindrop;
 Catcher catching;
 Timer t;
 Start st;
+PImage game;
 /* p is the number of raindrops you have caught
  q is the number of raindrops you have missed
  n is the index that determines how many raindrops will be on the screen
@@ -17,27 +18,30 @@ void setup() {
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   colorMode(HSB, 360, 100, 100);
-  //initializes all parameters, integers, classes, and array
+  imageMode(CORNER);
+  //initializes all parameters, integers, classes, array, and image
   catching=new Catcher();
   raindrop=new Raindrop[10];
   t=new Timer();
   st=new Start();
+  game=loadImage("game scene.jpg");
   p=0;
   q=0;
   n=1;
-  lim=100;
+  lim=50;
   run=false;
   for (int i=0;i<raindrop.length;i++) {
     raindrop[i]=new Raindrop();
   }
 }
 void draw() {
-  /* displays the catcher and allows it to move
-   starts the timer and increases the number of drops according to the time
-   */
-  background(0);
   //the main code only runs if the boolean run is true
   if (run) {
+    /* diplays the image as a background
+     displays the catcher and allows it to move
+     starts the timer and increases the number of drops according to the time
+     */
+    image(game, 0, 0, width, height);
     catching.display();
     catching.move();
     t.run();

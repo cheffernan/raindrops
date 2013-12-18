@@ -1,14 +1,15 @@
 //this class will have a raindrop that falls down the screen, reappears at the top if the raindrop touches the catcher, and stops the game if too many raindrps are missed
 class Raindrop {
   /* creates the position (s), velocity (v), and acceleration (a) vectors for the raindrop
-   creates a radius, height(distance from the center of the raindrop), and color for each raindrop
+   creates a radius, height(distance from the center of the raindrop), a color for each raindrop, and an image for the background
    */
   PVector s, v, a;
-  float r,h;
+  float r, h;
   color c;
+  PImage end;
   //creates a constructor with no parameters
   Raindrop() {
-    /* gives a radius and height to the drop, and an acceleration
+    /* gives a radius and height to the drop, and an acceleration, and initializes the image
      allows the position to have a random x-component
      velocity has random x and y components
      */
@@ -17,14 +18,15 @@ class Raindrop {
     s= new PVector(random(r, width-r), 0);
     v= new PVector(random(-.5, .5), random(0, 3));
     a= new PVector(0, .01);
+    end=loadImage("end scene.jpg");
   }
   //displays a drop (circle and triangle) according to the parameters defined above
   void display() {
     colorMode(HSB, 360, 100, 100);
-    c= color(240, 50, 80);
+    c= color(240, 100, 100);
     fill(c);
     ellipse(s.x, s.y, 2*r, 2*r);
-    triangle(s.x,s.y-h,s.x-r,s.y,s.x+r,s.y);
+    triangle(s.x, s.y-h, s.x-r, s.y, s.x+r, s.y);
   }
   //makes the raindrop move with velocity and acceleration
   void move() {
@@ -65,9 +67,9 @@ class Raindrop {
   }
   //stops the game if over 100 raindrops are missed
   void stopGame() {   
-    //creates a black background with a message if q (the number of raindrops missed) reaches lim (the limit of raindrops that can be missed)
+    //creates a thunderstorm background image with a message if q (the number of raindrops missed) reaches lim (the limit of raindrops that can be missed)
     if (q>=lim) {
-      background(0);
+      image(end, 0, 0, width, height);
       textSize(75);
       fill(random(360), 100, 100);
       text("YOU LOSE. TRY AGAIN", width/2, height/2);

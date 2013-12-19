@@ -96,6 +96,7 @@ class Raindrop {
       p=0;
       catching.r=75;
       n=1;
+      ntwo=0;
       for (int i=0;i<raindrop.length;i++) {
         raindrop[i]=new Raindrop();
       }

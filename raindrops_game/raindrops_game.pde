@@ -61,6 +61,13 @@ void draw() {
      the program checks to see if the catcher touches the raindrop
      if it does, raindrop is reset to top
      */
+    for (int i=0;i<ntwo;i++) {
+      star[i].display();
+      if (q<lim) {
+        star[i].move();
+      }
+      star[i].checkCatcher(catching);
+    }
     for (int i=0;i<n;i++) {
       raindrop[i].display();
       if (q<lim) {
@@ -68,13 +75,6 @@ void draw() {
       }
       raindrop[i].stopGame();
       raindrop[i].checkCatcher(catching);
-    }
-    for (int i=0;i<ntwo;i++) {
-      star[i].display();
-      if (q<lim) {
-        star[i].move();
-      }
-      star[i].checkCatcher(catching);
     }
     //displays the two scores, the number of raindrops caught in the middle of the screen in green, and the number of drops missed on the side of the screen in red
     fill(120, 100, 100);

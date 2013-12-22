@@ -9,7 +9,7 @@ class Catcher {
    */
   Catcher() {
     r=75;
-    s= new PVector(mouseX, height-r);
+    
   }
   //shows the catcher, ellipse with a fill of predetermined color and radius
   void display() {
@@ -17,7 +17,7 @@ class Catcher {
     /* the color of the catcher changes as you miss more raindrops
      the color starts at red, then goes through the entire spectrum back to red 
      */
-    c= color(360*q/lim, 80, 100);
+    s= new PVector(mouseX, height-r);c= color(360*q/lim, 80, 100);
     fill(c);
     ellipse(s.x, s.y, 2*r, 2*r);
   }

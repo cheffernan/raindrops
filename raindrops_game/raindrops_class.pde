@@ -36,7 +36,7 @@ class Raindrop {
      the velocity is reset because there is acceleration, and that would make the raindrops go too fast over time if not reset
      */
     if (s.y>height-r) {
-      v= new PVector(random(-1, 1), random(0, 3));
+      v= new PVector(random(-.5, .5), random(0, 3));
       s= new PVector(random(r, width-r), -r);
       q++;
     }
@@ -55,11 +55,11 @@ class Raindrop {
      the number of raindrops caught increases
      */
     if (s.dist(z.s)<r+z.r) {
-      v= new PVector(random(-1, 1), random(0, 3));
+      v= new PVector(random(-.5, .5), random(0, 3));
       s= new PVector(random(r, width-r), -r);
       p++;
       //the radius of the catcher decreases every time the score increases to make the game harder 
-      if (catching.r>10) {
+      if (catching.r>20) {
         catching.r--;
       }
     }

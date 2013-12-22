@@ -15,12 +15,12 @@ class Timer {
     time=millis();
     println(millis());
   }
-  //adds a raindrop every 2 seconds
+  //adds a raindrop every 3 seconds
   void addDrops() {
-    /* if the difference between the time and the time since the last raindrop was dropped is greater than 2 seconds, the number of raindrops increases
-     old time is set to equal time because this way the difference between the two will equal zero and will against increase until 2 seconds
+    /* if the difference between the time and the time since the last raindrop was dropped is greater than 3 seconds, the number of raindrops increases
+     old time is set to equal time because this way the difference between the two will equal zero and will against increase until 3 seconds
      */
-    if (time-ot>2000) {
+    if (time-ot>3000) {
       ot=time;
       //another raindrop is added only if the index is less than the length of the array of raindrops (which is the maximum number of raindrops)
       if (n<raindrop.length) {

@@ -72,13 +72,13 @@ class Raindrop {
       image(end, 0, 0, width, height);
       textSize(75);
       fill(random(360), 100, 100);
-      text("YOU LOSE. TRY AGAIN", width/2, height/2);
+      text("GAME OVER", width/2, height/2);
       //creates a button to try again, whose length and width are related to the start screen length and width 
       fill(0, 50, 80);
       rect(width/2, height-100, st.l, .75*st.w);
       textSize(50);
       fill(0);
-      text("GAME OVER", width/2, height-100);
+      text("TRY AGAIN", width/2, height-100);
     }
   }
   //resets the parameters of the game so that it can be replayed

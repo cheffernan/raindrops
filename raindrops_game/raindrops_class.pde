@@ -15,7 +15,7 @@ class Raindrop {
      */
     r=5;
     h=10;
-    s= new PVector(random(r, width-r), 0);
+    s= new PVector(random(r, width-r), -r);
     v= new PVector(random(-.5, .5), random(0, 3));
     a= new PVector(0, .01);
     end=loadImage("end scene.jpg");
@@ -64,7 +64,7 @@ class Raindrop {
       }
     }
   }
-  //stops the game if over 100 raindrops are missed
+  //stops the game if over 50 raindrops are missed
   void stopGame() {   
     //creates a thunderstorm background image with a message if q (the number of raindrops missed) reaches lim (the limit of raindrops that can be missed)
     if (q>=lim) {
@@ -78,7 +78,7 @@ class Raindrop {
       rect(width/2, height-100, st.l, .75*st.w);
       textSize(50);
       fill(0);
-      text("TRY AGAIN", width/2, height-100);
+      text("GAME OVER", width/2, height-100);
     }
   }
   //resets the parameters of the game so that it can be replayed

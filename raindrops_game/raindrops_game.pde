@@ -72,9 +72,9 @@ void draw() {
       raindrop[i].display();
       if (q<lim) {
         raindrop[i].move();
+        raindrop[i].checkCatcher(catching);
       }
       raindrop[i].stopGame();
-      raindrop[i].checkCatcher(catching);
     }
     //displays the two scores, the number of raindrops caught in the middle of the screen in green, and the number of drops missed on the side of the screen in red
     fill(120, 100, 100);
@@ -82,7 +82,8 @@ void draw() {
     text(p, width/2, 50);
     fill(0, 50, 80);
     textSize(20);
-    text(q, width-20, 20);
+    text("LIVES:",width-70,20);
+    text(lim-q, width-20, 20);
   }
   //if the boolean run is false, the start screen displays
   else {

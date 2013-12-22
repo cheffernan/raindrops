@@ -29,7 +29,7 @@ class Star {
     }
   }
   void checkCatcher(Catcher z) {
-    //if the sum of the catcher radius and star size is greater than the distance between the center of the star and catcher, then the star goes below the screen and stops moving, and the number of misses decreases by 5
+    //if the sum of the catcher radius and star size is than the distance between the center of the star and catcher, then the star goes below the screen and stops moving, and the number of misses decreases by 5
     if (s.dist(z.s)<l+z.r) {
       s= new PVector(0, height+100);
       v=new PVector(0, 0);

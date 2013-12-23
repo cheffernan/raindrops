@@ -100,6 +100,9 @@ class Raindrop {
       for (int i=0;i<raindrop.length;i++) {
         raindrop[i]=new Raindrop();
       }
+      for (int i=0;i<star.length;i++) {
+        star[i]=new Star();
+      }
     }
   }
 }
